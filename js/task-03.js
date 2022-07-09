@@ -12,3 +12,17 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const listEl = document.querySelector('.gallery');
+
+const markup = images.map(image => `<li><img src='${image.url}' alt='${image.alt}'></li>`).join("");
+listEl.insertAdjacentHTML('afterbegin', markup);
+
+
+//size adjustment
+const imagesEl = document.querySelectorAll('.gallery img');
+imagesEl.forEach(img => img.width = 300);
+
+//Добавь минимальное оформление галереи флексбоксами или гридами через CSS классы.
+//??как и еще больше зачем?? 
+// listEl.style.display = 'flex';
